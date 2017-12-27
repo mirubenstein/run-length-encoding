@@ -21,3 +21,24 @@ end
 module BookKeeping
   VERSION = 3
 end
+
+# Other potential solutions
+# class RunLengthEncoding
+#   def self.encode(input)
+#     input.gsub(/(\D)\1+/) { "#{$&.length}#{$1}" }
+#   end
+#
+#   def self.decode(input)
+#     input.gsub(/(\d+)(\D)/){ $2 * $1.to_i }
+#   end
+# end
+
+# def self.encode(input)
+#   input.chars.chunk(&:itself).map do |letter, group|
+#     if group.size == 1
+#       letter
+#     else
+#       "#{group.size}#{letter}"
+#     end
+#   end.join("")
+# end
